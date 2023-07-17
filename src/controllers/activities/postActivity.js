@@ -1,10 +1,18 @@
-const { Activity, Country } = require("../db");
+const { Activity, Country, User } = require("../../db");
 
 const postActivity = async (activityData) => {
   try {
-    const { name, difficulty, duration, season, CountryIds } = activityData;
+    const { name, difficulty, duration, season, CountryIds, UserId } =
+      activityData;
 
-    if (!name || !difficulty || !season || !CountryIds || !CountryIds.length) {
+    if (
+      !name ||
+      !difficulty ||
+      !season ||
+      !CountryIds ||
+      !CountryIds.length ||
+      !UserId
+    ) {
       throw new Error("Datos insuficientes");
     }
 
@@ -13,6 +21,7 @@ const postActivity = async (activityData) => {
       difficulty,
       duration: duration ? duration : null,
       season,
+      UserId,
     };
 
     const createdActivity = await Activity.create(newActivity);

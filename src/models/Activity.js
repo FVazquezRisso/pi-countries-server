@@ -9,10 +9,12 @@ module.exports = (sequelize) => {
         autoIncrement: true,
         primaryKey: true,
       },
+
       name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+
       difficulty: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -21,13 +23,16 @@ module.exports = (sequelize) => {
           max: 5,
         },
       },
+
       duration: {
         type: DataTypes.INTEGER,
       },
+
       season: {
         type: DataTypes.ENUM("Summer", "Autumn", "Winter", "Spring"),
         allowNull: false,
       },
-    },{timestamps: false}
+    },
+    { timestamps: false }
   );
 }

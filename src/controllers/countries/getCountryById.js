@@ -1,4 +1,4 @@
-const { Country, Activity } = require("../db");
+const { Country, Activity } = require("../../db");
 
 const getCountryById = async (idPais) => {
   try {
@@ -12,14 +12,14 @@ const getCountryById = async (idPais) => {
             through: { attributes: [] },
           },
         ],
-        attributes: { exclude: ["country_activity"] }, 
+        attributes: { exclude: ["country_activity"] },
       });
     }
 
     if (countryFound) return countryFound;
     else throw new Error("Fallo al procesar la solicitud");
   } catch (error) {
-    return{ error: error.message };
+    return { error: error.message };
   }
 };
 

@@ -1,4 +1,4 @@
-const { Country } = require("../db");
+const { Country } = require("../../db");
 const { Op } = require("sequelize");
 
 const getAllCountries = async (name) => {
