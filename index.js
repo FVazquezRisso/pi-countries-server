@@ -8,6 +8,6 @@ conn.sync({ force: true }).then(() => {
 server.listen(PORT, async () => {
   console.log(`Server listening on port ${PORT}`);
   await llenarBD()
-  console.log("La base de datos se llenó con éxito.");
+  console.log("The database has been successfully populated.");
 })
 }).catch(error => console.error(error))

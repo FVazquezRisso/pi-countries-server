@@ -11,7 +11,7 @@ router.use("/users", usersRouter);
 
 router.use((err, req, res, next) => {
   console.error(err);
-  res.status(500).json({ error: "Error interno del servidor" });
+  res.status(500).json({ error: "Internal server error." });
 });
 
 module.exports = router;

@@ -7,10 +7,10 @@ const deleteActivity = async (id) => {
     });
 
     if (deletedActivityCount === 0) {
-      throw new Error("No se encontró ninguna actividad con ese ID.");
+      throw new Error("No activity found with that ID.");
     }
 
-    return { message: "La actividad ha sido eliminada exitosamente." };
+    return { message: "The activity has been successfully deleted." };
   } catch (error) {
     return { error: error.message };
   }

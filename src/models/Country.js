@@ -9,14 +9,20 @@ module.exports = (sequelize) => {
         allowNull: false,
         primaryKey: true,
       },
+
       name: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(100),
         allowNull: false,
+        validate: {
+          len: [3, 100],
+        },
       },
+
       flag: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+
       continent: {
         type: DataTypes.ENUM(
           "North America",
@@ -29,18 +35,25 @@ module.exports = (sequelize) => {
         ),
         allowNull: false,
       },
+
       capital: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+
       subregion: {
         type: DataTypes.STRING,
       },
+
       area: {
         type: DataTypes.FLOAT,
       },
+
       population: {
         type: DataTypes.INTEGER,
+        validate: {
+          min: 0,
+        },
       },
     },
     { timestamps: false }

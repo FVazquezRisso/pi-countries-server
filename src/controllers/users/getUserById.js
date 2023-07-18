@@ -11,7 +11,7 @@ const getUserById = async (id) => {
     }
 
     if (userFound) return userFound;
-    else throw new Error("Fallo al procesar la solicitud");
+    else throw new Error("Failed to process the request.");
   } catch (error) {
     return { error: error.message };
   }

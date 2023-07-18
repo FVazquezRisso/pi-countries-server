@@ -16,7 +16,7 @@ const getAllCountries = async (name) => {
     }
 
     if (countries.length === 0)
-      throw new Error("No se encontraron países con el nombre especificado");
+      throw new Error("No countries found with the specified name.");
 
     return countries;
   } catch (error) {

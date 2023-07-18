@@ -7,10 +7,10 @@ const updateActivity = async (id, updatedData) => {
     });
 
     if (updatedActivityCount === 0) {
-      throw new Error("No se encontró ninguna actividad con ese ID.");
+      throw new Error("No activity found with that ID.");
     }
 
-    return { message: "La actividad ha sido actualizada exitosamente." };
+    return { message: "The activity has been successfully updated." };
   } catch (error) {
     return { error: error.message };
   }

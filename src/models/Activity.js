@@ -11,8 +11,11 @@ module.exports = (sequelize) => {
       },
 
       name: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(50),
         allowNull: false,
+        validate: {
+          len: [3, 50],
+        },
       },
 
       difficulty: {
@@ -26,6 +29,10 @@ module.exports = (sequelize) => {
 
       duration: {
         type: DataTypes.INTEGER,
+        validate: {
+          min: 0,
+          max: 16,
+        },
       },
 
       season: {

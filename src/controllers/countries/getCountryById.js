@@ -17,7 +17,7 @@ const getCountryById = async (idPais) => {
     }
 
     if (countryFound) return countryFound;
-    else throw new Error("Fallo al procesar la solicitud");
+    else throw new Error("Failed to process the request.");
   } catch (error) {
     return { error: error.message };
   }

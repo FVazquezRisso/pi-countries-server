@@ -27,7 +27,7 @@ const postActivity = async (activityData) => {
     const createdActivity = await Activity.create(newActivity);
 
     if (!createdActivity) {
-      throw new Error("Error al crear la actividad");
+      throw new Error("Error creating the activity.");
     }
 
     const countries = await Country.findAll({
@@ -35,12 +35,12 @@ const postActivity = async (activityData) => {
     });
 
     if (!countries || countries.length !== CountryIds.length) {
-      throw new Error("Países inválidos");
+      throw new Error("Invalid countries.");
     }
 
     await createdActivity.addCountries(countries);
 
-    return { message: `Se ha creado la actividad ${name}` };
+    return { message: `The activity '${name}' has been created.` };
   } catch (error) {
     return { error: error.message };
   }

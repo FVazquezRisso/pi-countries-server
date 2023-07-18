@@ -5,12 +5,13 @@ const postUser = async (userData) => {
     const { username, password } = userData;
 
     if (!username || !password) {
-      throw new Error("Datos insuficientes");
+      throw new Error("Insufficient data.");
     }
 
     const existUser = await User.findOne({ where: { username: username } });
 
-    if (existUser) throw new Error(`El usuario ${username} ya existe.`);
+    if (existUser)
+      throw new Error(`The username '${username}' already exists.`);
 
     const newUser = {
       username,
@@ -19,7 +20,7 @@ const postUser = async (userData) => {
 
     const createdUser = await User.create(newUser);
 
-    if (!createdUser) throw new Error("Error al crear el usuario");
+    if (!createdUser) throw new Error("Error creating the user.");
 
     return createdUser;
   } catch (error) {
